@@ -30,29 +30,29 @@
 
     <nav class="navbar navbar-expand-md bg-dark navbar-dark">
         <div class="container">
-          <a href="#" class="navbar-brand text-warning">Fathalla Market</a>
-          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Dashboard</a>
-              </li>
-              <li class="nav-item"></li>
-                <a class="nav-link" href="#">Registration</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Draw</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Report</a>
-              </li>
-            </ul>
-          </div>
+                <a href="#" class="navbar-brand text-warning">Fathalla Market</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                            <a class="nav-link active" href="#">Dashboard</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link" href="#">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Draw</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Report</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-      </nav>
-
+    </nav>
+<main>
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -75,8 +75,8 @@
                             </div>
                         </form>
                     </div>
-                    <div class="card-footer text-center">
-                        <p id="output" class="text-danger"></p>
+                    <div class="card-footer text-center bg-dark">
+                        <p id="output" class="text-white bg-dark"></p>
                     </div>
                 </div>
             </div>
@@ -87,34 +87,56 @@
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="input-group">
-                <input type="number" id="moneyValue" class="form-control" placeholder="Enter amount">
-                <button id="showMoneyBtn" class="btn btn-primary text-capitalize ">Maximum invoice amount</button>
+                <input type="number" id="invoice" class="form-control" placeholder="Enter amount">
+                <button id="invoice" class="btn btn-primary text-capitalize ">Maximum invoice amount</button>
             </div>
         </div>
     </div>
 </div>
 
 
-<div class="container mt-5">
+<div class="container mt-3">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="input-group">
-                <input type="number" id="percentageValue" class="form-control" placeholder="Enter percentage %">
-                <button id="showPercentageBtn" class="btn btn-primary text-capitalize ">Cashback percentage</button>
+                <input type="number" id="Cashback" class="form-control" placeholder="Enter percentage %">
+                <button id="Cashback" class="btn btn-primary text-capitalize ">Cashback percentage</button>
             </div>
         </div>
     </div>
 </div>
-<div class="container mt-5">
+<div class="container mt-3">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <div class="input-group">
-                <input type="number" id="moneyValue" class="form-control" placeholder="Number of clients">
-                <button id="showMoneyBtn" class="btn btn-primary text-capitalize ">Number of clients </button>
+                <input type="number" id="clients" class="form-control" placeholder="Number of clients">
+                <button id="clients" class="btn btn-primary text-capitalize ">Number of clients </button>
             </div>
         </div>
     </div>
 </div>
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group">
+                <select class="form-select" aria-label="Default select example">
+                <option selected>Branches</option>
+                <option value="1">Smouha</option>
+                <option value="2">Hannoville</option>
+                <option value="3">Gardenia</option>
+                <option value="4">Fleming</option>
+                <option value="5">City Square</option>
+                <option value="6">October</option>
+                <option value="7">Abu Yousef</option>
+                <option value="8">Dekheila 1</option>
+                </select>
+                <button id="Branches" class="btn btn-primary text-capitalize ">Branches  </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 
 <!-- Send Data Button -->
 <div class=" container mt-5">
@@ -123,6 +145,8 @@
     </div>
 </div>
 
+
+</main>
 
 
 
@@ -148,7 +172,7 @@
             // Check if the end date is after the start date
             if (endDate > startDate) {
                 output.textContent = "Start Date: " + startDate.toISOString().split('T')[0] + 
-                                     " | End Date: " + endDate.toISOString().split('T')[0];
+                                    " | End Date: " + endDate.toISOString().split('T')[0];
                 output.classList.remove("text-danger");
                 output.classList.add("text-dark");
             } else {
