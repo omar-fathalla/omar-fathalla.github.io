@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="css/stylee.css">
+</head>
+<body>
+    <body>
+        <div class="container center-container mt-5">
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header text-center">
+                  <h3>Login</h3>
+                </div>
+                <div class="card-body">
+                  <form id="loginForm" onsubmit="return validateForm()">
+                    <div class="mb-3">
+                      <label for="username" class="form-label">Username</label>
+                      <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript -->
+  <script>
+    function validateForm() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
+
+      if (username === "" || password === "") {
+        alert("Both fields are required!");
+        return false;
+      }
+
+      alert("Login successful!");
+
+      // Redirect to index.html after successful login
+      window.location.href = "index.html";
+      
+      return false; // Prevent form submission (useful if you're handling everything with JS)
+    }
+  </script>
+</body>
+</html>
