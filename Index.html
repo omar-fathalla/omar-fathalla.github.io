@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System For Gift</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--  Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    
+    
+</head>
+<body>
+    <header class="mb-2">
+        <div class="container mt-2">
+            <div class="d-flex justify-content-end">
+                <div class="btn-group">
+                    <button class="btn btn-secondary btn-sm" data-bs-theme-value="Dark">
+                        Dark
+                    </button>
+                    <button class="btn btn-light btn-sm" data-bs-theme-value="Light">
+                        Light
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+
+    <nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container">
+          <a href="#" class="navbar-brand text-warning">Fathalla Market</a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">Dashboard</a>
+              </li>
+              <li class="nav-item"></li>
+                <a class="nav-link" href="#">Registration</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Draw</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Report</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header bg-dark text-white text-center">
+                        <h4>Enter Start and End Dates</h4>
+                    </div>
+                    <div class="card-body">
+                        <form id="dateForm">
+                            <div class="mb-3">
+                                <label for="startDate" class="form-label">Start Date:</label>
+                                <input type="date" class="form-control text-uppercase" id="startDate" name="startDate" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="endDate" class="form-label">End Date:</label>
+                                <input type="date" class="form-control text-uppercase" id="endDate" name="endDate" required>
+                            </div>
+                            <div class="d-grid">
+                                <button type="submit" class="btn btn-primary text-light">Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="card-footer text-center">
+                        <p id="output" class="text-danger"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group">
+                <input type="number" id="moneyValue" class="form-control" placeholder="Enter amount">
+                <button id="showMoneyBtn" class="btn btn-primary text-capitalize ">Maximum invoice amount</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group">
+                <input type="number" id="percentageValue" class="form-control" placeholder="Enter percentage %">
+                <button id="showPercentageBtn" class="btn btn-primary text-capitalize ">Cashback percentage</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container mt-5">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="input-group">
+                <input type="number" id="moneyValue" class="form-control" placeholder="Number of clients">
+                <button id="showMoneyBtn" class="btn btn-primary text-capitalize ">Number of clients </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Send Data Button -->
+<div class=" container mt-5">
+    <div class="col-md-6 offset-md-3">
+        <button id="sendDataBtn" class="btn btn-success">Send Data</button>
+    </div>
+</div>
+
+
+
+
+<!-- Footer -->
+<footer class="bg-dark text-white text-center py-4 mt-5">
+    <p>All rights reserved. © Fathalla|Programming Department .2022</p>
+</footer>
+
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        document.getElementById("dateForm").addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent form from submitting
+    
+            // Get start and end date values
+            let startDate = new Date(document.getElementById("startDate").value);
+            let endDate = new Date(document.getElementById("endDate").value);
+            let output = document.getElementById("output");
+    
+            // Check if the end date is after the start date
+            if (endDate > startDate) {
+                output.textContent = "Start Date: " + startDate.toISOString().split('T')[0] + 
+                                     " | End Date: " + endDate.toISOString().split('T')[0];
+                output.classList.remove("text-danger");
+                output.classList.add("text-dark");
+            } else {
+                output.textContent = "End date must be after the start date.";
+                output.classList.add("text-danger");
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/darkmodetoggle.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+/* Default light mode */
+body {
+    background-color: white;
+    color: black;
+}
+
+.dark-theme {
+    background-color: #2c2c2c;
+    color: rgb(177, 39, 39);
+}
+
+.light-theme {
+    background-color: white;
+    color: black;
+}
+
