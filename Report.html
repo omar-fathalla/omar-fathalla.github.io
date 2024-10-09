@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!--  Custom CSS -->
+    <link rel="stylesheet" href="css/stylee.css">
+    <!-- Google Material Icons -->
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"/>
+</head>
+<body>
+ 
+
+<nav class="navbar navbar-expand-md bg-dark navbar-dark">
+        <div class="container">
+                <a href="#" class="navbar-brand text-warning">Fathalla Market</a>
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ">
+                    <li class="nav-item">
+                            <a class="nav-link " href="Dashboard.html">Dashboard</a>
+                    </li>
+                    <li class="nav-item"></li>
+                        <a class="nav-link "  href="Registration.html">Registration</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Draw.html">Draw</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Report</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+</nav>
+
+<main>
+
+    <body>
+
+        <div class="container mt-5" dir="rtl">
+            <h4 class="text-center mb-4 ">جدول تقارير المهرجانات</h4>
+            <br>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>رقم المهرجان</th>
+                            <th>تاريخ المهرجان</th>
+                            <th>اسم المهرجان</th>
+                            <th>الفرع</th>
+                            <th>التقرير</th>
+                            <th>طباعة</th>
+                        </tr>
+                    </thead>
+                    <tbody id="festival-table-body">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+        <script>
+            const festivals = [
+                { id: 1, date: "07/09/2024", name: "حلواني", branch: "فرع القاهرة" },
+                { id: 2, date: "08/10/2024", name: "حلواني", branch: "فرع الجيزة" },
+                { id: 3, date: "10/11/2024", name: "الفن العربي", branch: "فرع الإسكندرية" },
+                { id: 4, date: "12/12/2024", name: "القاهرة الدولي", branch: "فرع المنصورة" },
+                { id: 5, date: "15/01/2025", name: "الموسيقى الشرقية", branch: "فرع الأقصر" },
+                { id: 6, date: "20/02/2025", name: "الطرب الأصيل", branch: "فرع أسوان" },
+                { id: 7, date: "05/03/2025", name: "الشباب والرياضة", branch: "فرع سوهاج" },
+                { id: 8, date: "10/04/2025", name: "فن وثقافة", branch: "فرع دمياط" },
+                { id: 9, date: "20/05/2025", name: "الأفلام السينمائية", branch: "فرع بورسعيد" },
+                { id: 10, date: "30/06/2025", name: "المسرح الوطني", branch: "فرع الإسماعيلية" }
+            ];
+    
+            const tableBody = document.getElementById("festival-table-body");
+    
+            festivals.forEach(festival => {
+                const row = `
+                    <tr>
+                        <td>${festival.id}</td>
+                        <td>${festival.date}</td>
+                        <td>${festival.name}</td>
+                        <td>${festival.branch}</td>
+                        <td><a href="#">view</a></td>
+                        <td><a href="#">Print</a></td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        </script>
+    
+
+    <!-- Search Filters Section -->
+
+ <div class="container  mt-5">
+    <div class="row ">
+
+        <div class="col-md-6">
+          <div class="input-group mb-3 col-4">
+            <span class="input-group-text"><span class="material-icons search-icon">search</span></span>
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInputGroup1"
+                placeholder="Username"/>
+              <label for="floatingInputGroup1">Number Cliant</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="input-group mb-3 col-4">
+            <span class="input-group-text"><span class="material-icons search-icon">qr_code_scanner</span></span>
+            <div class="form-floating">
+              <input
+                type="text"
+                class="form-control"
+                id="floatingInputGroup1"
+                placeholder="Username"/>
+              <label for="floatingInputGroup1">Scan Code</label>
+            </div>
+          </div>
+        </div>
+    
+    </div>
+  </div> 
+
+  <!-- Send Data Button -->
+  <div class=" container ">
+    <div class="row ">
+        <div class="col-md-6 offset-md-3">
+            <button id="sendDataBtn" class="btn btn-success">Search</button>
+        </div>
+    </div>
+</div>
+
+<div class="container mt-5" dir="rtl">
+    <h4 class="text-center mb-4 ">جدول العميل </h4>
+    <br>
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>رقم المهرجان</th>
+                    <th>تاريخ المهرجان</th>
+                    <th>اسم المهرجان</th>
+                    <th>الفرع</th>
+                    <th>التقرير</th>
+                    <th>طباعة</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>15/09/2024</td>
+                    <td>مهرجان الفن الحديث</td>
+                    <td>فرع القاهرة</td>
+                    <td><a href="#">view</a></td>
+                    <td><a href="#">Print</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+
+</main>
+
+
+
+<!-- Footer -->
+<footer class="bg-dark text-light text-center py-3 mt-5">
+  <div class="container">
+    <p>All rights reserved. © Fathalla | Programming Department "2024".</p>
+  </div>
+</footer>
+
+
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>     
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/darkmodetoggle.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

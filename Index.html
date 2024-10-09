@@ -1,179 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>System For Gift</title>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!--  Custom CSS -->
-    <link rel="stylesheet" href="css/style.css">
-    
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <!-- Link to External CSS -->
+  <link rel="stylesheet" href="css/stylee.css">
 </head>
 <body>
- 
-
-<nav class="navbar navbar-expand-md bg-dark navbar-dark">
-        <div class="container">
-                <a href="#" class="navbar-brand text-warning">Fathalla Market</a>
-                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ">
-                    <li class="nav-item">
-                            <a class="nav-link active" href="#">Dashboard</a>
-                    </li>
-                    <li class="nav-item"></li>
-                        <a class="nav-link" href="#">Registration</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Draw</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Report</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-</nav>
-
-<main>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header bg-light text-black text-center">
-                        <h4> Start and End Dates</h4>
-                    </div>
-                    <div class="card-body">
-                        <form id="dateForm">
-                            <div class="mb-3">
-                                <label for="startDate" class="form-label">Start Date:</label>
-                                <input type="date" class="form-control text-uppercase" id="startDate" name="startDate" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="endDate" class="form-label">End Date:</label>
-                                <input type="date" class="form-control text-uppercase" id="endDate" name="endDate" required>
-                            </div>
-                            <div class="d-grid">
-                                <button type="submit" class="btn btn-primary text-light">Submit</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div class="card-footer text-center bg-light">
-                        <p id="output" class="text-dark bg-light"></p>
-                    </div>
+        <div class="container center-container mt-5">
+          <div class="row justify-content-center">
+            <div class="col-md-4">
+              <div class="card">
+                <div class="card-header text-center">
+                  <h3>Login</h3>
                 </div>
+                <div class="card-body">
+                  <form id="loginForm" onsubmit="return validateForm()">
+                    <div class="mb-3">
+                      <label for="username" class="form-label">Username</label>
+                      <input type="text" class="form-control" id="username" placeholder="Enter your username">
+                    </div>
+                    <div class="mb-3">
+                      <label for="password" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                    </div>
+                    <button type="submit" class="btn btn-primary w-100">Login</button>
+                  </form>
+                </div>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="input-group">
-                <input type="number" id="invoice" class="form-control" placeholder="Enter amount">
-                <button id="invoice" class="btn btn-primary text-capitalize ">Maximum invoice amount</button>
-            </div>
-        </div>
-    </div>
-</div>
+  <!-- Bootstrap JS and Popper.js -->
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <!-- JavaScript -->
+  <script>
+    function validateForm() {
+      var username = document.getElementById("username").value;
+      var password = document.getElementById("password").value;
 
+      if (username === "" || password === "") {
+        alert("Both fields are required!");
+        return false;
+      }
 
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="input-group">
-                <input type="number" id="Cashback" class="form-control" placeholder="Enter percentage %">
-                <button id="Cashback" class="btn btn-primary text-capitalize ">Cashback percentage</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="input-group">
-                <input type="number" id="event" class="form-control" placeholder="Event Or Company">
-                <button id="event" class="btn btn-primary text-capitalize ">name the event</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="input-group">
-                <select class="form-select" aria-label="Default select example">
-                <option selected>Branches</option>
-                <option value="1">Smouha</option>
-                <option value="2">Hannoville</option>
-                <option value="3">Gardenia</option>
-                <option value="4">Fleming</option>
-                <option value="5">City Square</option>
-                <option value="6">October</option>
-                <option value="7">Abu Yousef</option>
-                <option value="8">Dekheila 1</option>
-                </select>
-                <button id="Branches" class="btn btn-primary text-capitalize ">Branches  </button>
-            </div>
-        </div>
-    </div>
-</div>
+      alert("Login successful!");
 
-
-
-<!-- Send Data Button -->
-<div class=" container mt-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <button id="sendDataBtn" class="btn btn-success">Create Event</button>
-        </div>
-    </div>
-</div>
-
-
-</main>
-
-
-
-<!-- Footer -->
-<footer class="bg-dark text-white text-center py-4 mt-5">
-    <p>All rights reserved. © Fathalla|Programming Department .2022</p>
-</footer>
-
-
-
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <script>
-        document.getElementById("dateForm").addEventListener("submit", function(event) {
-            event.preventDefault();  // Prevent form from submitting
-    
-            // Get start and end date values
-            let startDate = new Date(document.getElementById("startDate").value);
-            let endDate = new Date(document.getElementById("endDate").value);
-            let output = document.getElementById("output");
-    
-            // Check if the end date is after the start date
-            if (endDate > startDate) {
-                output.textContent = "Start Date: " + startDate.toISOString().split('T')[0] + 
-                                    " | End Date: " + endDate.toISOString().split('T')[0];
-                output.classList.remove("text-danger");
-                output.classList.add("text-dark");
-            } else {
-                output.textContent = "End date must be after the start date.";
-                output.classList.add("text-danger");
-            }
-        });
-    </script>
-
-    
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/darkmodetoggle.js"></script>
-    <script src="js/script.js"></script>
+      // Redirect to index.html after successful login
+      window.location.href = "Dashboard.html";
+      
+      return false; // Prevent form submission (useful if you're handling everything with JS)
+    }
+  </script>
 </body>
 </html>
