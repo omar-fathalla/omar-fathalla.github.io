@@ -8,8 +8,7 @@
 /* Center the login container on the page */
   
   .card-header {
-    background-color: #007bff;
-    color: white;
+    background-color: #ffffff;
   }
   
   .btn-primary {
@@ -67,4 +66,13 @@
     transform: translateX(26px);
   }
 
+
+  form .btn-primary.omar{
+    background-color: #f7921e;
+    ;
+
+  }
+  form .btn-primary.omar:hover{
+    background-color:#eea553
+  }
 
