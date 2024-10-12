@@ -7,16 +7,33 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--  Custom CSS -->
-    <link rel="stylesheet" href="css/stylee.css">
-    
-    
-    
+    <link rel="stylesheet" href="css/stylee.css"> 
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .card {
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary {
+            width: 100%;
+        }
+        .form-label {
+            font-weight: bold;
+        }
+        #userTable {
+            margin-top: 30px;
+        }
+    </style>      
 </head>
+
 <body>
 
- 
-
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
                 <a href="index.html" class="navbar-brand text-warning">Fathalla Market</a>
 
@@ -27,7 +44,10 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ">
                     <li class="nav-item">
-                            <a class="nav-link active" href="#">Dashboard</a>
+                        <a class="nav-link active " href="Dashboard.html">Dashboard</a>
+                </li>
+                    <li class="nav-item">
+                            <a class="nav-link " href="Construction.html">Construction</a>
                     </li>
                     <li class="nav-item"></li>
                         <a class="nav-link" href="Registration.html">Registration</a>
@@ -42,202 +62,222 @@
             </div>
         </div>
 </nav>
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-header bg-light text-black text-center">
-                        <h4> Start and End Dates</h4>
+ 
+<div class="container">
+    <div class="row justify-content-center">
+        <div class="col-lg-6">
+            <div class="card p-4">
+                <h3 class="text-center mb-4">Create Client</h3>
+                <form id="userForm">
+                    <div class="mb-3">
+                        <label for="username" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="username" placeholder="Enter username" required>
                     </div>
-                    <div class="card-body">
-                        <form id="dateForm">
-                            <div class="mb-3">
-                                <label for="startDate" class="form-label">Start Date:</label>
-                                <input type="date" class="form-control text-uppercase" id="startDate" name="startDate" required>
-                            </div>
-                            <div class="mb-3">
-                                <label for="endDate" class="form-label">End Date:</label>
-                                <input type="date" class="form-control text-uppercase" id="endDate" name="endDate" required>
-                            </div>
-                            <div class=" ">
-                                <button type="submit" class="btn btn-success text-light ">Create  Time Event</button>
-                            </div>
-                        </form>
+                    <div class="mb-3">
+                        <label for="password" class="form-label">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter password" required>
                     </div>
-                    <div class="card-footer text-center bg-light">
-                        <p id="output" class="text-dark bg-light"></p>
+                    <div class="mb-3">
+                        <label for="branch" class="form-label">Branch</label>
+                        <select class="form-select" id="branch" required>
+                            <option value="">Select a branch</option>
+                            <option value="New York">New York</option>
+                            <option value="Los Angeles">Los Angeles</option>
+                            <option value="Chicago">Chicago</option>
+                            <option value="San Francisco">San Francisco</option>
+                        </select>
                     </div>
+                    <input type="hidden" id="editingUserId"> <!-- Hidden field to track editing user -->
+                    <button type="submit" class="btn btn-primary" id="submitButton">Create User</button>
+                </form>
+                <div class="alert alert-success mt-3 d-none" id="successMsg">
+                    User has been created successfully!
+                </div>
+                <div class="alert alert-danger mt-3 d-none" id="errorMsg">
+                    Please fill out all fields!
                 </div>
             </div>
         </div>
     </div>
 
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="input-group">
-                <input type="number" id="invoice" class="form-control" placeholder="Enter amount">
-                <button id="invoice" class="btn btn-primary text-capitalize ">Maximum invoice amount</button>
-            </div>
+    <!-- User table -->
+    <div class="row justify-content-center py-5 text-center ">
+        <div class="col-lg-8">
+            <table class="table table-striped mt-4 table-primary " id="userTable">
+                <thead>
+                    <tr>
+                        <th>Num</th>
+                        <th>Username</th>
+                        <th>Password</th>
+                        <th>Branch</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody class="py-5">
+                    <!-- Users will be added dynamically here -->
+                </tbody>
+            </table>
         </div>
     </div>
 </div>
 
+<!-- Bootstrap JS and dependencies -->
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="input-group">
-                <input type="number" id="Cashback" class="form-control" placeholder="Enter percentage %">
-                <button id="Cashback" class="btn btn-primary text-capitalize ">Cashback percentage</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="input-group">
-                <input type="text" id="event" class="form-control" placeholder="Event Or Company">
-                <button id="event" class="btn btn-primary text-capitalize ">name the event</button>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="container mt-3">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <div class="input-group">
-                <select class="form-select" aria-label="Default select example">
-                <option selected>Branches</option>
-                <option value="1">Smouha</option>
-                <option value="2">Hannoville</option>
-                <option value="3">Gardenia</option>
-                <option value="4">Fleming</option>
-                <option value="5">City Square</option>
-                <option value="6">October</option>
-                <option value="7">Abu Yousef</option>
-                <option value="8">Dekheila 1</option>
-                </select>
-                <button id="Branches" class="btn btn-primary text-capitalize ">Branches  </button>
-            </div>
-        </div>
-    </div>
-</div>
+<!-- Custom JS -->
+<script>
+    let userCount = 0; // To keep track of the number of users created
+    let users = []; // To store users data
 
+    document.getElementById('userForm').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent form submission
 
+        // Get form values
+        var username = document.getElementById('username').value;
+        var password = document.getElementById('password').value;
+        var branch = document.getElementById('branch').value;
+        var editingUserId = document.getElementById('editingUserId').value;
 
-<!-- Send Data Button -->
-<div class=" container  py-5">
-    <div class="row">
-        <div class="col-md-6 offset-md-3">
-            <button id="sendDataBtn" class="btn btn-success">Create Event</button>
-        </div>
-    </div>
-</div>
+        // Validate form inputs
+        if(username === "" || password === "" || branch === "") {
+            document.getElementById('errorMsg').classList.remove('d-none');
+            document.getElementById('successMsg').classList.add('d-none');
+        } else {
+            document.getElementById('errorMsg').classList.add('d-none');
+            document.getElementById('successMsg').classList.remove('d-none');
 
-<!-- Cards Section Event Available -->
-<div class="bg-light py-5">
-<div class="container py-2">
-    <h4 class="text-center mb-4">Event Available</h4>
-    <div class="row">
+            if (editingUserId) {
+                // Update existing user
+                updateUser(editingUserId, username, password, branch);
+            } else {
+                // Add new user to the table
+                addUserToTable(username, password, branch);
+            }
 
-        <div class="col-md-4 py-2">
-            <div class="card ">
-                <div class="card-body ">
-                    <h5 class="card-title ">Cashback 20%</h5>
-                    <p class="card-text ">Start Date: 2024-10-10 | End Date: 2024-10-31</p>
-                    <p>October</p>
-                    <a href="#" class="btn btn-primary"">عيد الاضحي </a>
-                    <label class="switch float-end ">
-                        <input type="checkbox" id="toggleSwitch" checked>
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 py-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Cashback 50%</h5>
-                    <p class="card-text">Start Date: 2024-12-15 | End Date: 2024-12-31</p>
-                    <p>Fleming</p>
-                    <a href="#" class="btn btn-primary">اللحيمي</a>
-                    <label class="switch float-end ">
-                        <input type="checkbox" id="toggleSwitch" checked>
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 py-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Cashback 80%</h5>
-                    <p class="card-text">Start Date: 2024-08-01 | End Date: 2024-07-25</p>
-                    <p>Somuha</p>
-                    <a href="#" class="btn btn-primary">حلواني</a>
-                    <label class="switch float-end ">
-                        <input type="checkbox" id="toggleSwitch" checked>
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+            // Clear form fields after submission
+            document.getElementById('userForm').reset();
+            document.getElementById('editingUserId').value = ""; // Reset editing flag
+            document.getElementById('submitButton').textContent = "Create User"; // Change button text back
+        }
+    });
 
-<!-- Cards Section Not Available -->
-<div class="container mt-5 ">
-    <h4 class="text-center mb-4">Event Not Available</h4>
-    <div class="row">
+    function addUserToTable(username, password, branch) {
+        userCount++; // Increment user count
 
-        <div class="col-md-4 py-2">
-            <div class="card ">
-                <div class="card-body ">
-                    <h5 class="card-title ">Cashback 20%</h5>
-                    <p class="card-text ">Start Date: 2024-10-10 | End Date: 2024-10-31</p>
-                    <p>October</p>
-                    <a href="#" class="btn btn-primary"">عيد الاضحي </a>
-                    <label class="switch float-end ">
-                        <input type="checkbox" id="toggleSwitch">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 py-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Cashback 50%</h5>
-                    <p class="card-text">Start Date: 2024-12-15 | End Date: 2024-12-31</p>
-                    <p>Fleming</p>
-                    <a href="#" class="btn btn-primary">اللحيمي</a>
-                    <label class="switch float-end ">
-                        <input type="checkbox" id="toggleSwitch  " >
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 py-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Cashback 80%</h5>
-                    <p class="card-text">Start Date: 2024-08-01 | End Date: 2024-07-25</p>
-                    <p>Somuha</p>
-                        <a href="#" class="btn btn-primary">حلواني </a>
-                        <label class="switch float-end ">
-                            <input type="checkbox" id="toggleSwitch ">
-                            <span class="slider"></span>
-                        </label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+        let user = {
+            id: userCount,
+            username: username,
+            password: password,
+            branch: branch
+        };
 
+        users.push(user);
+
+        // Create a new row
+        var table = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow();
+
+        // Insert cells
+        var cell1 = newRow.insertCell(0);
+        var cell2 = newRow.insertCell(1);
+        var cell3 = newRow.insertCell(2);
+        var cell4 = newRow.insertCell(3);
+        var cell5 = newRow.insertCell(4);
+
+        // Add content to cells
+        cell1.innerHTML = userCount; // User count as the ID
+        cell2.innerHTML = username;
+        cell3.innerHTML = password; // In a real app, you wouldn't display passwords!
+        cell4.innerHTML = branch;
+        cell5.innerHTML = `<button class="btn btn-warning btn-sm" onclick="editUser(${userCount})">Edit</button>`;
+    }
+
+    function editUser(userId) {
+        let user = users.find(u => u.id === userId);
+
+        if (user) {
+            document.getElementById('username').value = user.username;
+            document.getElementById('password').value = user.password;
+            document.getElementById('branch').value = user.branch;
+            document.getElementById('editingUserId').value = user.id; // Set the editing ID
+            document.getElementById('submitButton').textContent = "Save Changes"; // Change button text
+        }
+    }
+
+    function updateUser(userId, username, password, branch) {
+        let userIndex = users.findIndex(u => u.id === parseInt(userId));
+
+        if (userIndex > -1) {
+            users[userIndex].username = username;
+            users[userIndex].password = password;
+            users[userIndex].branch = branch;
+
+            // Update the table row
+            let table = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+            let row = table.rows[userIndex];
+
+            row.cells[1].innerHTML = username;
+            row.cells[2].innerHTML = password;
+            row.cells[3].innerHTML = branch;
+        }
+    }
+</script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+
+    <!-- Custom JS -->
+    <script>
+        let userCount = 0; // To keep track of the number of users created
+
+        document.getElementById('userForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission
+
+            // Get form values
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+            var branch = document.getElementById('branch').value;
+
+            // Validate form inputs
+            if(username === "" || password === "" || branch === "") {
+                document.getElementById('errorMsg').classList.remove('d-none');
+                document.getElementById('successMsg').classList.add('d-none');
+            } else {
+                document.getElementById('errorMsg').classList.add('d-none');
+                document.getElementById('successMsg').classList.remove('d-none');
+
+                // Add user to the table
+                addUserToTable(username, password, branch);
+
+                // Clear form fields after submission
+                document.getElementById('userForm').reset();
+            }
+        });
+
+        function addUserToTable(username, password, branch) {
+            userCount++; // Increment user count
+
+            // Create a new row
+            var table = document.getElementById('userTable').getElementsByTagName('tbody')[0];
+            var newRow = table.insertRow();
+
+            // Insert cells
+            var cell1 = newRow.insertCell(0);
+            var cell2 = newRow.insertCell(1);
+            var cell3 = newRow.insertCell(2);
+            var cell4 = newRow.insertCell(3);
+
+            // Add content to cells
+            cell1.innerHTML = userCount; // User count as the ID
+            cell2.innerHTML = username;
+            cell3.innerHTML = password; // In a real app, you wouldn't display passwords!
+            cell4.innerHTML = branch;
+        }
+    </script>
+</body>
+</html>
 
 
 
@@ -246,49 +286,15 @@
     <div class="container">
       <p>All rights reserved. © Fathalla | Programming Department "2024".</p>
     </div>
-  </footer>
+</footer>
 
 
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 
-    <!-- JavaScript -->
-    <script>
-        document.getElementById('toggleSwitch').addEventListener('change', function() {
-        var statusText = document.getElementById('status');
-        if (this.checked) {
-            statusText.textContent = 'Status: ON';
-        } else {
-            statusText.textContent = 'Status: OFF';
-        }
-        });
-    </script>
-    
-    <script>
-        document.getElementById("dateForm").addEventListener("submit", function(event) {
-            event.preventDefault();  // Prevent form from submitting
-    
-            // Get start and end date values
-            let startDate = new Date(document.getElementById("startDate").value);
-            let endDate = new Date(document.getElementById("endDate").value);
-            let output = document.getElementById("output");
-    
-            // Check if the end date is after the start date
-            if (endDate > startDate) {
-                output.textContent = "Start Date: " + startDate.toISOString().split('T')[0] + 
-                                    " | End Date: " + endDate.toISOString().split('T')[0];
-                output.classList.remove("text-danger");
-                output.classList.add("text-dark");
-            } else {
-                output.textContent = "End date must be after the start date.";
-                output.classList.add("text-danger");
-            }
-        });
-    </script>
 
-        <!-- Bootstrap JS and dependencies -->
-
+     <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/darkmodetoggle.js"></script>
     <script src="js/script.js"></script>
