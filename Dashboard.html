@@ -7,28 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--  Custom CSS -->
-    <link rel="stylesheet" href="css/stylee.css"> 
-    <style>
-        body {
-            background-color: #f8f9fa;
-        }
-        .container {
-            margin-top: 50px;
-        }
-        .card {
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-        }
-        .btn-primary {
-            width: 100%;
-        }
-        .form-label {
-            font-weight: bold;
-        }
-        #userTable {
-            margin-top: 30px;
-        }
-    </style>      
+    <link rel="stylesheet" href="css/stylee.css">    
 </head>
 
 <body>
@@ -66,7 +45,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-6">
-            <div class="card p-4">
+            <div class="card p-4 mt-5">
                 <h3 class="text-center mb-4">Create Client</h3>
                 <form id="userForm">
                     <div class="mb-3">
@@ -103,7 +82,7 @@
     <!-- User table -->
     <div class="row justify-content-center py-5 text-center ">
         <div class="col-lg-8">
-            <table class="table table-striped mt-4 table-primary " id="userTable">
+            <table class="table table-striped mt-4 " id="userTable">
                 <thead>
                     <tr>
                         <th>Num</th>
@@ -120,10 +99,6 @@
         </div>
     </div>
 </div>
-
-<!-- Bootstrap JS and dependencies -->
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
 
 <!-- Custom JS -->
 <script>
@@ -224,12 +199,8 @@
     }
 </script>
 
-    <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
-    <!-- Custom JS -->
-    <script>
+ <!-- Custom JS -->
+<script>
         let userCount = 0; // To keep track of the number of users created
 
         document.getElementById('userForm').addEventListener('submit', function(e) {
@@ -275,10 +246,7 @@
             cell3.innerHTML = password; // In a real app, you wouldn't display passwords!
             cell4.innerHTML = branch;
         }
-    </script>
-</body>
-</html>
-
+</script>
 
 
 <!-- Footer -->
@@ -292,11 +260,16 @@
 
 
 
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
 
-     <!-- Bootstrap JS and dependencies -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/darkmodetoggle.js"></script>
-    <script src="js/script.js"></script>
+<!-- JavaScript -->
+<script src="js/bootstrap.bundle.min.js"></script>
+<script src="js/darkmodetoggle.js"></script>
+<script src="js/script.js"></script>
+
 </body>
 </html>

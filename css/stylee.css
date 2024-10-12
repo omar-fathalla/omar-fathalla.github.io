@@ -87,3 +87,32 @@
     background-color:#eea553
   }
 
+  
+  .card {
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-label {
+  font-weight: bold;
+}
+#userTable {
+  margin-top: 30px;
+}
+
+/* Edit Section btn */
+
+.edit-btn {
+  background-color: #198754; /* Bootstrap warning color (yellow) */
+  color: white;
+  border: none;
+}
+
+.edit-btn:hover {
+  background-color: #015f11; /* Darker shade for hover effect */
+  color: #ffffff;
+}
+
+
+
+

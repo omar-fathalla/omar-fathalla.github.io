@@ -7,10 +7,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!--  Custom CSS -->
-    <link rel="stylesheet" href="css/stylee.css">
-    
-    
-    
+    <link rel="stylesheet" href="css/stylee.css">      
 </head>
 <body>
 
@@ -45,6 +42,7 @@
             </div>
         </div>
 </nav>
+
     <div class="container mt-5">
         <div class="row justify-content-center">
             <div class="col-md-6">
@@ -107,27 +105,67 @@
         </div>
     </div>
 </div>
+
+
 <div class="container mt-3">
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <div class="input-group">
-                <button id="Branches" class="btn btn-primary text-capitalize ">Branches  </button>
-                <select class="form-select" aria-label="Default select example">
-                <option selected>Branches</option>
-                <option value="1">Smouha</option>
-                <option value="2">Hannoville</option>
-                <option value="3">Gardenia</option>
-                <option value="4">Fleming</option>
-                <option value="5">City Square</option>
-                <option value="6">October</option>
-                <option value="7">Abu Yousef</option>
-                <option value="8">Dekheila 1</option>
-                </select>
-            </div>
+            
+    <h4>Branches</h4>
+    <form class="d-flex flex-wrap">
+        
+        <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" value="Smouha" id="checkbox2">
+            <label class="form-check-label" for="checkbox2">
+                Smouha
+            </label>
         </div>
+        <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" value="Hannoville" id="checkbox3">
+            <label class="form-check-label" for="checkbox3">
+                Hannoville
+            </label>
+        </div>
+        <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" value="Gardenia" id="checkbox4">
+            <label class="form-check-label" for="checkbox4">
+                Gardenia
+            </label>
+        </div>
+        <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" value="Fleming" id="checkbox5">
+            <label class="form-check-label" for="checkbox5">
+                Fleming
+            </label>
+        </div>
+        <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" value="City Square" id="checkbox6">
+            <label class="form-check-label" for="checkbox6">
+                City Square
+            </label>
+        </div>
+        <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" value="October" id="checkbox7">
+            <label class="form-check-label" for="checkbox7">
+                October
+            </label>
+        </div>
+        <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" value="Abu Yousef" id="checkbox8">
+            <label class="form-check-label" for="checkbox8">
+                Abu Yousef
+            </label>
+        </div>
+        <div class="form-check me-3">
+            <input class="form-check-input" type="checkbox" value="Dekheila 1" id="checkbox9">
+            <label class="form-check-label" for="checkbox9">
+                Dekheila 1
+            </label>
+        </div>
+    </form>
+    </div>
     </div>
 </div>
-
 
 
 <!-- Send Data Button -->
@@ -139,124 +177,144 @@
     </div>
 </div>
 
+    <!-- Search -->
+
+
 <!-- Cards Section Event Available -->
-<div class="bg-light py-5">
-<div class="container py-2">
-    <h4 class="text-center mb-4">Event Available</h4>
-    <div class="row">
+ 
+    <div class="bg-light py-5">
 
-        <div class="col-md-4 py-2">
-            <div class="card ">
-                <div class="card-body ">
-                    <h5 class="card-title ">Cashback 20%</h5>
-                    <p class="card-text ">Start Date: 2024-10-10 | End Date: 2024-10-31</p>
-                    <p>October</p>
-                    <a href="#" class="btn btn-primary"">عيد الاضحي </a>
-                    <label class="switch float-end ">
-                        <input type="checkbox" id="toggleSwitch" checked>
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
+             <h4 class="text-center py-5">Event Availabl </h4>
+
+          <!-- Search Bar and Filter Button -->
+      <div class="mb-5 col-md-6 offset-md-3">
+        <div class="input-group">
+        <button class="btn btn-primary" onclick="filterEvents()">Search</button>
+        <input type="text" id="searchInput" class="form-control " placeholder="Search by Event Name">
         </div>
-        <div class="col-md-4 py-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Cashback 50%</h5>
-                    <p class="card-text">Start Date: 2024-12-15 | End Date: 2024-12-31</p>
-                    <p>Fleming</p>
-                    <a href="#" class="btn btn-primary">اللحيمي</a>
-                    <label class="switch float-end ">
-                        <input type="checkbox" id="toggleSwitch" checked>
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 py-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Cashback 80%</h5>
-                    <p class="card-text">Start Date: 2024-08-01 | End Date: 2024-07-25</p>
-                    <p>Somuha</p>
-                    <a href="#" class="btn btn-primary">حلواني</a>
-                    <label class="switch float-end ">
-                        <input type="checkbox" id="toggleSwitch" checked>
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
+     </div>
+  
+      <div class="row" id="eventList">
+
+                    <div class="col-md-4 py-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Cashback 20%</h5>
+                                <p class="card-text">Start Date: 2024-10-10 | End Date: 2024-10-31</p>
+                                <p>October</p>
+                                <a href="#" class="btn btn-primary">Cashback 80%</a>
+                                <button type="button" class="btn edit-btn">Edit</button>
+                                <label class="switch float-end">
+                                    <input type="checkbox" id="toggleSwitch" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-md-4 py-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Cashback 50%</h5>
+                                <p class="card-text">Start Date: 2024-12-15 | End Date: 2024-12-31</p>
+                                <p>Fleming</p>
+                                <a href="#" class="btn btn-primary">Cashback 70%</a>
+                                <button type="button" class="btn edit-btn">Edit</button>
+                                <label class="switch float-end">
+                                    <input type="checkbox" id="toggleSwitch" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="col-md-4 py-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Cashback 80%</h5>
+                                <p class="card-text">Start Date: 2024-08-01 | End Date: 2024-07-25</p>
+                                <p>Somuha</p>
+                                <a href="#" class="btn btn-primary">حلواني</a>
+                                <button type="button" class="btn edit-btn">Edit</button>
+                                <label class="switch float-end">
+                                    <input type="checkbox" id="toggleSwitch" checked>
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                
+
+
+              <!-- Cards Section Not Available -->
+
+              <h4 class="text-center py-5 ">Event Not Available</h4>
+
+                    <div class="col-md-4 py-2">
+                        <div class="card ">
+                            <div class="card-body ">
+                                <h5 class="card-title ">Cashback 20%</h5>
+                                <p class="card-text ">Start Date: 2024-10-10 | End Date: 2024-10-31</p>
+                                <p>October</p>
+                                <a href="#" class="btn btn-primary"">عيد الاضحي </a>
+                                <!-- btn Edit  -->
+                                <button type="button" class="btn edit-btn">Edit</button>
+                                <label class="switch float-end ">
+                                    <input type="checkbox" id="toggleSwitch">
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 py-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Cashback 50%</h5>
+                                <p class="card-text">Start Date: 2024-12-15 | End Date: 2024-12-31</p>
+                                <p>Fleming</p>
+                                <a href="#" class="btn btn-primary">اللحيمي</a>
+                                <!-- btn Edit  -->
+                                <button type="button" class="btn edit-btn">Edit</button>
+                                <label class="switch float-end ">
+                                    <input type="checkbox" id="toggleSwitch  " >
+                                    <span class="slider"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 py-2">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Cashback 80%</h5>
+                                <p class="card-text">Start Date: 2024-08-01 | End Date: 2024-07-25</p>
+                                <p>Somuha</p>
+                                    <a href="#" class="btn btn-primary">حلواني </a>
+                                    <label class="switch float-end ">
+                                        <input type="checkbox" id="toggleSwitch ">
+                                        <span class="slider"></span>
+                                    </label>
+                            </div>
+                        </div>
+                    </div>
+
+              
+       </div>
 </div>
 
-<!-- Cards Section Not Available -->
-<div class="container mt-5 ">
-    <h4 class="text-center mb-4">Event Not Available</h4>
-    <div class="row">
 
-        <div class="col-md-4 py-2">
-            <div class="card ">
-                <div class="card-body ">
-                    <h5 class="card-title ">Cashback 20%</h5>
-                    <p class="card-text ">Start Date: 2024-10-10 | End Date: 2024-10-31</p>
-                    <p>October</p>
-                    <a href="#" class="btn btn-primary"">عيد الاضحي </a>
-                    <label class="switch float-end ">
-                        <input type="checkbox" id="toggleSwitch">
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-light text-center py-3 ">
+        <div class="container">
+        <p>All rights reserved. © Fathalla | Programming Department "2024".</p>
         </div>
-        <div class="col-md-4 py-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Cashback 50%</h5>
-                    <p class="card-text">Start Date: 2024-12-15 | End Date: 2024-12-31</p>
-                    <p>Fleming</p>
-                    <a href="#" class="btn btn-primary">اللحيمي</a>
-                    <label class="switch float-end ">
-                        <input type="checkbox" id="toggleSwitch  " >
-                        <span class="slider"></span>
-                    </label>
-                </div>
-            </div>
-        </div>
-        <div class="col-md-4 py-2">
-            <div class="card">
-                <div class="card-body">
-                    <h5 class="card-title">Cashback 80%</h5>
-                    <p class="card-text">Start Date: 2024-08-01 | End Date: 2024-07-25</p>
-                    <p>Somuha</p>
-                        <a href="#" class="btn btn-primary">حلواني </a>
-                        <label class="switch float-end ">
-                            <input type="checkbox" id="toggleSwitch ">
-                            <span class="slider"></span>
-                        </label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
+    </footer>
 
 
 
-
-<!-- Footer -->
-<footer class="bg-dark text-light text-center py-3 ">
-    <div class="container">
-      <p>All rights reserved. © Fathalla | Programming Department "2024".</p>
-    </div>
-  </footer>
-
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
-
-    <!-- JavaScript -->
+    <!-- Custom JavaScript for toggleSwitch -->
     <script>
         document.getElementById('toggleSwitch').addEventListener('change', function() {
         var statusText = document.getElementById('status');
@@ -267,7 +325,8 @@
         }
         });
     </script>
-    
+
+    <!-- Custom JavaScript  for date-->
     <script>
         document.getElementById("dateForm").addEventListener("submit", function(event) {
             event.preventDefault();  // Prevent form from submitting
@@ -290,8 +349,37 @@
         });
     </script>
 
-        <!-- Bootstrap JS and dependencies -->
 
+    <!-- Custom JavaScript for search-->
+    <script>
+        function filterEvents() {
+            // Get the search input value
+            const searchValue = document.getElementById('searchInput').value.toLowerCase();
+
+            // Get all the event cards
+            const eventCards = document.querySelectorAll('#eventList .card');
+
+            // Loop through all event cards and filter based on the text inside the <a> element with .btn.btn-primary
+            eventCards.forEach(function(card) {
+                const buttonText = card.querySelector('.btn-primary').textContent.toLowerCase();
+                
+                // Show the card if the button text matches the search value, otherwise hide it
+                if (buttonText.includes(searchValue)) {
+                    card.parentElement.style.display = '';
+                } else {
+                    card.parentElement.style.display = 'none';
+                }
+            });
+        }
+    </script>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+
+    <!-- JavaScript --> 
     <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/darkmodetoggle.js"></script>
     <script src="js/script.js"></script>
