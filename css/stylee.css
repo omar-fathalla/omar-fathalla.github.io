@@ -1,4 +1,7 @@
 
+body{
+  background-color: #f8f9fa;
+}
 .content {
   flex: 1;
 }
@@ -113,6 +116,9 @@
   color: #ffffff;
 }
 
-
+h6 {
+  display: block;
+  width: 100%;
+}
 
 
