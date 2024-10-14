@@ -41,7 +41,7 @@
             </div>
         </div>
 </nav>
- 
+
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-lg-6">
@@ -199,60 +199,10 @@
     }
 </script>
 
- <!-- Custom JS -->
-<script>
-        let userCount = 0; // To keep track of the number of users created
-
-        document.getElementById('userForm').addEventListener('submit', function(e) {
-            e.preventDefault(); // Prevent form submission
-
-            // Get form values
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-            var branch = document.getElementById('branch').value;
-
-            // Validate form inputs
-            if(username === "" || password === "" || branch === "") {
-                document.getElementById('errorMsg').classList.remove('d-none');
-                document.getElementById('successMsg').classList.add('d-none');
-            } else {
-                document.getElementById('errorMsg').classList.add('d-none');
-                document.getElementById('successMsg').classList.remove('d-none');
-
-                // Add user to the table
-                addUserToTable(username, password, branch);
-
-                // Clear form fields after submission
-                document.getElementById('userForm').reset();
-            }
-        });
-
-        function addUserToTable(username, password, branch) {
-            userCount++; // Increment user count
-
-            // Create a new row
-            var table = document.getElementById('userTable').getElementsByTagName('tbody')[0];
-            var newRow = table.insertRow();
-
-            // Insert cells
-            var cell1 = newRow.insertCell(0);
-            var cell2 = newRow.insertCell(1);
-            var cell3 = newRow.insertCell(2);
-            var cell4 = newRow.insertCell(3);
-
-            // Add content to cells
-            cell1.innerHTML = userCount; // User count as the ID
-            cell2.innerHTML = username;
-            cell3.innerHTML = password; // In a real app, you wouldn't display passwords!
-            cell4.innerHTML = branch;
-        }
-</script>
-
-
 <!-- Footer -->
 <footer class="bg-dark text-light text-center py-3 ">
     <div class="container">
-      <p>All rights reserved. © Fathalla | Programming Department "2024".</p>
+<p>All rights reserved. © Fathalla | Programming Department "2024".</p>
     </div>
 </footer>
 
